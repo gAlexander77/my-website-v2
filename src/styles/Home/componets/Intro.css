@@ -1,0 +1,9 @@
+.intro-header-container {
+    position: absolute;
+    top: 20%;
+    padding: 5%;
+}
+
+.intro-header-container > h1 {
+    font-size: 40px
+}

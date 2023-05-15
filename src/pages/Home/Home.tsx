@@ -1,13 +1,19 @@
-import React from 'react';
+import React, { FC } from 'react';
+import Navbar from './components/Navbar';
+import Intro from './components/Intro';
+import Skills from './components/Skills';
+import Projects from './components/Projects';
+import Contact from './components/Contact';
+import '../../styles/Home/Home.css';
 
-function Home(){
+const Home: FC = () => {
     return(
-        <div>
-            <div>Navbar</div>
-            <div>Intro</div>
-            <div>Skills</div>
-            <div>Projects</div>
-            <div>Contact</div>
+        <div className="home-page">
+            <Navbar/>
+            <Intro/>
+            <Skills/>
+            <Projects/>
+            <Contact/>
         </div>
     );
 }

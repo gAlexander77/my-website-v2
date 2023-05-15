@@ -1,9 +1,14 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-function Projects(){
+const Projects: FC = () => {
     return(
-        <div>
-        </div>
+        <section>
+            <h1>Projects</h1>
+            <div>
+                <div>Project 1</div>
+                <div>Project 2</div>
+            </div>
+        </section>
     );
 }
 

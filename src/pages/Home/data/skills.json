@@ -1,0 +1,37 @@
+{
+    "programming-languages": [
+        "C",
+        "C++",
+        "Python",
+        "JavaScript",
+        "TypeScript",
+        "Go",
+        "Java",
+        "SQL",
+        "HTML",
+        "CSS"
+    ],
+    "technologies": [
+        "React",
+        "Redux Toolkit",
+        "Node",
+        "Express",
+        "PostgreSQL",
+        "SQLite",
+        "MongoDB"
+    ],
+    "developer-tools": [
+        "Git",
+        "Amazon Web Services",
+        "Google Cloud Platform",
+        "Docker",
+        "Visual Studio Code",
+        "Intellij"
+    ],
+    "software": [
+        "Microsoft Office",
+        "Figma",
+        "Adobe Photoshop",
+        "Adobe Illustrator"
+    ]
+}

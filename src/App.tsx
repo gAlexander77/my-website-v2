@@ -1,10 +1,14 @@
 import React from 'react';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home/Home';
 
-function App() {
+const App: React.FC = () => {
     return (
-        <div className="h-full w-full bg-[#1A1A1A] text-white flex flex-col items-center">
-            test
-        </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home/>}/>
+      </Routes>
+    </Router>
     );
 }
 

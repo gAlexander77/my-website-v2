@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { FC } from 'react';
 
-function Contact(){
+const Contact: FC = () => {
     return(
-        <div>
-        </div>
+        <section>
+            <h1>Contact</h1>
+        </section>
     );
 }
 

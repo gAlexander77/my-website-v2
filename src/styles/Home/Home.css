@@ -1,0 +1,21 @@
+body {
+    background-color: black;
+}
+
+.home-page{
+    scroll-snap-type: y mandatory;
+    height: 100vh;
+    width: 100%;
+    overflow-y: scroll;
+    background-color: #000000;
+}
+
+section {
+    scroll-snap-align: start;
+    margin-bottom: 10px;
+    height: 100vh;
+    width: 100%;
+    color: white;
+    background-color: #2E2E2E;
+    position: relative;
+}
