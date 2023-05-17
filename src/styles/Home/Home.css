@@ -13,9 +13,14 @@ body {
 section {
     scroll-snap-align: start;
     margin-bottom: 10px;
-    height: 100vh;
+    min-height: 100vh;
     width: 100%;
     color: white;
-    background-color: #2E2E2E;
+    background-color: rgb(26, 26, 26);
     position: relative;
+}
+
+#intro-section {
+    overflow-x: hidden;
+    overflow-y: hidden;
 }

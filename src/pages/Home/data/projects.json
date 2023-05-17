@@ -1,0 +1,47 @@
+[
+    {
+        "project-name": "Shape Shift",
+        "tech-stack": [
+            "TypeScript",
+            "React",
+            "Express",
+            "MongoDB"
+        ],
+        "repository": "https://github.com/gAlexander77/fitness-tracker/",
+        "live-demo": ""
+    },
+    {
+        "project-name": "Recipe App",
+        "tech-stack": [
+            "JavaScript",
+            "React",
+            "Python",
+            "Flask",
+            "SQLite3"
+        ],
+        "repository": "https://github.com/gAlexander77/recipe-application/",
+        "live-demo": ""
+    },
+    {
+        "project-name": "Study Timer",
+        "tech-stack": [
+            "React",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "repository": "https://github.com/gAlexander77/study-timer/",
+        "live-demo": "https://galexander77.github.io/study-timer/"
+    },
+    {
+        "project-name": "Auto Loan Calculator",
+        "tech-stack": [
+            "React",
+            "JavaScript",
+            "HTML",
+            "CSS"
+        ],
+        "repository": "https://github.com/gAlexander77/auto-loan-calculator",
+        "live-demo": ""
+    }
+]

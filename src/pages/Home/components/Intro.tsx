@@ -1,16 +1,33 @@
-import React, { FC } from 'react';
+import React, { FC, useState, useEffect, useRef } from 'react';
 import Typewriter from 'typewriter-effect';
 import '../../../styles/Home/componets/Intro.css';
 
 const Intro: FC = () => {
+
+    const [position, setPosition] = useState({ x: 0, y: 0 });
+
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement, MouseEvent>) => {
+        setPosition({ x: event.clientX, y: event.clientY });
+    };
+
+    
     return(
-        <section className="intro-section">
-            <div className="intro-header-container">
-                <h1>Hello,</h1>
-                <TypewriterEffect text="I'm Alexander Martinez"/>
-                <p>A Computer Science Student at the University of North Texas</p>
+        <div className="intro-background" onMouseMove={handleMouseMove}>
+            <div className="intro-background-screen">
+                <div className="intro-header-container">
+                    <h1>Hello,</h1>
+                    <TypewriterEffect text="I'm Alexander Martinez"/>
+                    <p>A Computer Science Student at the University of North Texas</p>
+                </div>
+                <div 
+                    className="light" 
+                    style={{ 
+                    top: `${position.y}px`,
+                    left: `${position.x}px`
+                    }}
+                />
             </div>
-        </section>
+        </div>
     );
 }
 

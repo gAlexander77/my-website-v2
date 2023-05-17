@@ -1,37 +1,49 @@
-{
-    "programming-languages": [
-        "C",
-        "C++",
-        "Python",
-        "JavaScript",
-        "TypeScript",
-        "Go",
-        "Java",
-        "SQL",
-        "HTML",
-        "CSS"
-    ],
-    "technologies": [
-        "React",
-        "Redux Toolkit",
-        "Node",
-        "Express",
-        "PostgreSQL",
-        "SQLite",
-        "MongoDB"
-    ],
-    "developer-tools": [
-        "Git",
-        "Amazon Web Services",
-        "Google Cloud Platform",
-        "Docker",
-        "Visual Studio Code",
-        "Intellij"
-    ],
-    "software": [
-        "Microsoft Office",
-        "Figma",
-        "Adobe Photoshop",
-        "Adobe Illustrator"
-    ]
-}
+[
+    {
+        "category": "Programming Languages",
+        "skills": [
+            "C",
+            "C++",
+            "Python",
+            "JavaScript",
+            "TypeScript",
+            "Go",
+            "Java",
+            "SQL",
+            "HTML",
+            "CSS"
+        ]
+    },
+    {
+        "category": "Technologies",
+        "skills": [
+            "React",
+            "Redux Toolkit",
+            "Node",
+            "Express",
+            "PostgreSQL",
+            "SQLite",
+            "MongoDB"
+        ]
+    },
+    {
+        "category": "Developer-tools",
+        "skills": [
+            "Git",
+            "Amazon Web Services",
+            "Google Cloud Platform",
+            "Docker",
+            "Visual Studio Code",
+            "Intellij"
+        ]
+    },
+    {
+        "category": "Software",
+        "skills": [
+            "Microsoft Office",
+            "Figma",
+            "Adobe Photoshop",
+            "Adobe Illustrator"
+        ]
+    }
+]
