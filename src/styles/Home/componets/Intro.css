@@ -1,13 +1,13 @@
 .intro-background{
     background-color: rgba(26, 26, 26);
-  background-image: 
+    /*background-image: 
     linear-gradient(to right, rgb(70, 70, 79) 4px, transparent 1px),
-    linear-gradient(to bottom, rgb(70, 70, 70) 4px, transparent 1px);
-  background-size: 50px 50px;
-  height: 100vh;
-  margin: 0;
-  background-attachment: fixed;
-  overflow-x: hidden;
+    linear-gradient(to bottom, rgb(70, 70, 70) 4px, transparent 1px);*/
+    background-size: 50px 50px;
+    height: 100vh;
+    margin: 0;
+    background-attachment: fixed;
+    overflow-x: hidden;
 }
 
 .intro-background-screen {
@@ -20,12 +20,13 @@
 .light {
     pointer-events: none;
     position: absolute;
-    margin: -400px 0 0 -400px;
-    height: 800px;
-    width: 800px;
+    margin: -200px 0 0 -200px;
+    height: 400px;
+    width: 400px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgba(51, 51, 51, 0.603), transparent);
-    mix-blend-mode: screen;
+    background: radial-gradient(circle at center, rgb(36, 35, 35), transparent);
+    filter: blur(30px);
+    mix-blend-mode: lighten;
 }
 
 .intro-header-container {

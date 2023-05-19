@@ -1,5 +1,52 @@
-.contact-section-content {
-    background-color: aquamarine;
-    padding-top: 100px;
-    height: 100%;
+.contact-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.contact-container > h1 {
+    font-size: 35px;
+    font-weight: bold;
+    cursor: default;
+}
+
+.contact-container > button {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    font-size: 18px;
+}
+
+.socials-container {
+    display: flex;
+    flex-direction: row;
+    gap: 25px;
+}
+
+.social-link-btn {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 5px;
+    position: relative;
+    overflow: hidden;
+    padding: 0 5px;
+    padding-bottom: 4px;
+}
+
+.social-link-btn::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: white;
+    bottom: 0;
+    left: 50%;
+    transition: all 0.3s ease-in-out;
+}
+
+.social-link-btn:hover::after {
+    width: 100%;
+    left: 0;
 }

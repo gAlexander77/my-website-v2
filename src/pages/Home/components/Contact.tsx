@@ -1,26 +1,33 @@
 import React, { FC } from 'react';
-import { BsGithub } from 'react-icons/bs';
+import { MdEmail } from "react-icons/md";
+import { BsGithub, BsLinkedin } from 'react-icons/bs';
 import '../../../styles/Home/componets/Contact.css';
 
 const Contact: FC = () => {
     return(
-        <section id="contact-section">
-            <div className="contact-section-content">
-                <div>
-                    <h1>Contact Me</h1>
-                    <div>
-                        <BsGithub/>
-                        <a>Github</a>
-                    </div>
-                    <div>
-                        <a>LinkedIn</a>
-                    </div>
-                    <div>
-                        <a>galexander1099</a>
-                    </div>
-                </div>
+        <>
+            <div className="contact-container">
+                <h1 className="contact-title">Contact Me</h1>
+                <button className="contact-btn">
+                    <MdEmail className="email-icon"/>
+                    <p>gilbertalexandermartinezz@gmail.com</p>
+                </button>
             </div>
-        </section>
+            <div className="socials-container">     
+                <a href='https://github.com/gAlexander77'>
+                    <button className="social-link-btn">
+                        <BsGithub className="git-icon"/>
+                        <p>Github</p> 
+                    </button>
+                </a>
+                <a href='https://github.com/gAlexander77'>
+                    <button className="social-link-btn">
+                        <BsLinkedin className="linkedin-icon"/>
+                        <p>LinkedIn</p>
+                    </button>
+                </a>
+            </div>
+        </>
     );
 }
 
