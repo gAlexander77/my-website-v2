@@ -24,7 +24,7 @@
     height: 400px;
     width: 400px;
     border-radius: 50%;
-    background: radial-gradient(circle at center, rgb(36, 35, 35), transparent);
+    background: radial-gradient(circle at center, rgba(36, 35, 35, 0.61), transparent);
     filter: blur(30px);
     mix-blend-mode: lighten;
 }

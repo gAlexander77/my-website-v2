@@ -16,13 +16,22 @@ section {
     min-height: 100vh;
     width: 100%;
     color: white;
-    background-color: rgb(26, 26, 26);
+    background-color: #1a1a1a;
     position: relative;
 }
 
 #intro-section {
     overflow-x: hidden;
     overflow-y: hidden;
+}
+
+#projects-section {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
 }
 
 #contact-section {

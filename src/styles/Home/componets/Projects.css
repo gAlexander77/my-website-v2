@@ -1,0 +1,53 @@
+#projects-section > .projects-title {
+    font-size: 25px;
+    cursor: default;
+}
+
+.list-of-projects-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 2px;
+    width: 500px;
+    max-width: 90vw;
+}
+
+.individual-project-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 0px;
+    position: relative;
+    cursor: pointer;
+}
+
+.individual-project-container:hover {
+    width: 100%;
+}
+
+.individual-project-animated-background {
+    height: 100%;
+    width: 0;
+    transition: width 0.2s ease-in-out;
+    position: absolute;
+}
+
+.individual-project-container:hover .individual-project-animated-background {
+    background: rgb(255,255,255);
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(26,26,26,1) 5%, rgba(42,42,42,1) 40%, rgba(42,42,42,1) 60%, rgba(26,26,26,1) 95%, rgba(255,255,255,0) 100%);
+    width: 100%;
+    cursor: pointer;
+}
+
+.individual-project-container > h1 {
+    z-index: 1;
+}
+
+.individual-project-container > .tech-stack-container {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+    z-index: 1;
+}
