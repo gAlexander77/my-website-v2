@@ -25,6 +25,14 @@ section {
     overflow-y: hidden;
 }
 
+#skills-section {
+    overflow-x: hidden;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content:center;
+}
+
 #projects-section {
     overflow-x: hidden;
     display: flex;

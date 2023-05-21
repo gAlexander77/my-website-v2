@@ -10,8 +10,10 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef }) => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
+    const [isScrolling, setIsScrolling] = useState(false);
 
     const scrollToRef = (ref: RefObject<HTMLDivElement>) => {
+        setIsScrolling(true);
         ref.current?.scrollIntoView({ behavior: 'smooth' });
     };
 
@@ -19,7 +21,7 @@ const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef 
         const observer = new IntersectionObserver(
             entries => {
                 entries.forEach(entry => {
-                    if (entry.isIntersecting) {
+                    if (entry.isIntersecting && !isScrolling) {
                         setActiveSection(entry.target.id);
                     }
                 });
@@ -41,7 +43,17 @@ const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef 
                 }
             });
         };
-    }, [introRef, skillsRef, projectsRef, contactRef]);
+    }, [introRef, skillsRef, projectsRef, contactRef, isScrolling]);
+
+    useEffect(() => {
+        const timeout = setTimeout(() => {
+            setIsScrolling(false);
+        }, 180);
+
+        return () => {
+            clearTimeout(timeout);
+        };
+    }, [isScrolling]);
 
     return (
         <div className="navbar-component">
