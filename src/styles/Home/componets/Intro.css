@@ -1,4 +1,4 @@
-.intro-background{
+.intro-background {
     background-color: rgba(26, 26, 26);
     background-size: 50px 50px;
     height: 100vh;
@@ -12,6 +12,46 @@
     width: 100%;
     height: 100%;
     overflow-x: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.intro-header-container {
+    padding: 5%;
+    z-index: 50;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    top: -40px;
+}
+
+.intro-header-container > h1 {
+    font-family: 'Basement Grotesque', fallback, sans-serif;
+    -webkit-text-stroke: 2px white;
+    color: transparent;
+    cursor: default;
+    font-size: min(200px, 15vw);
+    line-height: 1.2;
+}
+
+.intro-header-container > p {
+    font-family: 'Aileron-Regular', fallback, sans-serif;
+    line-height: 0;
+    font-size: 20px;
+    text-align: center;
+    font-size: min(30px, 2.5vw);
+    position: relative;
+    top: -5px;
+    right: -100px;
+}
+
+@media (max-width: 830px) {
+    .intro-header-container > p {
+        top: 0;
+        right: 10px;
+        width: 110%;
+    } 
 }
 
 .light {
@@ -24,21 +64,4 @@
     background: radial-gradient(circle at center, rgba(36, 35, 35, 0.61), transparent);
     filter: blur(30px);
     mix-blend-mode: lighten;
-}
-
-.intro-header-container {
-    position: absolute;
-    top: 5%;
-    padding: 5%;
-    z-index: 50;
-    display: flex;
-    flex-direction: column;
-}
-
-.intro-header-container > h1 {
-    font-size: 200px;
-    font-family: 'Basement Grotesque', fallback, sans-serif;
-    -webkit-text-stroke: 2px white;
-    color: transparent;
-    cursor: default;
 }

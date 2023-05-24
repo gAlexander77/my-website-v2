@@ -10,7 +10,7 @@ interface NavbarProps {
 
 const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef }) => {
     const [activeSection, setActiveSection] = useState<string | null>(null);
-    const [isScrolling, setIsScrolling] = useState(false);
+    const [isScrolling, setIsScrolling] = useState<boolean>(false);
 
     const scrollToRef = (ref: RefObject<HTMLDivElement>) => {
         setIsScrolling(true);
@@ -46,9 +46,18 @@ const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef 
     }, [introRef, skillsRef, projectsRef, contactRef, isScrolling]);
 
     useEffect(() => {
+        let timeoutValue: number = 550;
+
+        if (navigator.userAgent.includes('Chrome')) {
+            timeoutValue = 550;
+        } 
+        else if (navigator.userAgent.includes('Firefox')) {
+            timeoutValue = 200;
+        }
+
         const timeout = setTimeout(() => {
             setIsScrolling(false);
-        }, 180);
+        }, timeoutValue);
 
         return () => {
             clearTimeout(timeout);

@@ -1,0 +1,61 @@
+[
+    {
+        "projectName": "Shape Shifter",
+        "page": [
+            {
+                "type": "title",
+                "content": {
+                    "title": "Shape Shifter"
+                }
+            },
+            {
+                "type": "tech-stack",
+                "content": {
+                    "tech": [
+                        "TypeScript",
+                        "React",
+                        "Express",
+                        "MongoDB"
+                    ]
+                }
+            },
+            {
+                "type": "image",
+                "content": {
+                    "url": "url",
+                    "text": ""
+                }
+            }
+        ]
+    },
+    {
+        "projectName": "Recipe Application",
+        "page": [
+            {
+                "type": "title",
+                "content": {
+                    "title": "Recipe Application"
+                }
+            },
+            {
+                "type": "tech-stack",
+                "content": {
+                    "tech": [
+                        "JavaScript",
+                        "React",
+                        "Python",
+                        "Flask",
+                        "SQLite3"
+                    ]
+                }
+            },
+            {
+                "type": "image",
+                "content": {
+                    "url": "url",
+                    "text": ""
+                }
+            }
+        ]
+    }
+]

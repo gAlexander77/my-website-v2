@@ -36,6 +36,7 @@ const DecodeEffect: FC<DecodeProps> = ({text = '', randomSpeed = 20, solveSpeed 
             }
             console.log(index);
             console.log(tick);
+            console.log(currentText);
             if (currentText === text) {
                 clearInterval(decodeEffect);
             }

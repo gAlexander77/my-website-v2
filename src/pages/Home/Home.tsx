@@ -16,9 +16,9 @@ const Home: FC = () => {
     return(
         <div className="home-page">
             <Navbar 
-                introRef={introRef} 
-                skillsRef={skillsRef} 
-                projectsRef={projectsRef} 
+                introRef={introRef}
+                skillsRef={skillsRef}
+                projectsRef={projectsRef}
                 contactRef={contactRef}
             />
             <section id="intro-section" ref={introRef}><Intro/></section>
