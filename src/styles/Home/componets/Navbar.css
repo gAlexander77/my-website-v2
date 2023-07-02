@@ -22,8 +22,9 @@
 }
 
 .navbar-left > .logo {
-    font-size: 24px;
-    font-weight: 700;
+  font-family: 'Basement Grotesque', fallback, sans-serif;
+  font-size: 24px;
+  font-weight: 400;
 }
 
 .navbar-right {
@@ -42,6 +43,33 @@
   font-size: 1em;
   color: white;
   overflow: hidden;
+}
+
+
+.logo-visible {
+  animation: fadeIn 2s ease-in-out forwards;
+}
+
+.logo-invisible {
+  animation: fadeOut 1s ease-in-out forwards;
+}
+
+@keyframes fadeIn {
+  0% {
+      opacity: 0;
+  }
+  100% {
+      opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+      opacity: 1;
+  }
+  100% {
+      opacity: 0;
+  }
 }
 
 .nav-links > button::after {

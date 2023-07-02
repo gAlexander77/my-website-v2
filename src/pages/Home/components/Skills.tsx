@@ -9,7 +9,6 @@ const Skills: FC = () => {
 
     return(
         <>
-            <div className="left-shadow"/>
             <div className="skills-section-content">
                 <h1 className="skills-section-title">My Skills</h1>
                 <div className="skills-container">
@@ -18,7 +17,6 @@ const Skills: FC = () => {
                     ))}                    
                 </div>
             </div>
-            <div className="right-shadow"/>
         </>
     );
 }
@@ -32,8 +30,8 @@ interface SkillsCategoryProps {
 const SkillsCategory: FC<SkillsCategoryProps> = (props) => {
     return (
         <div className="skills-category-container">
-            <h1 className={`title-of-list-of-skills ${props.index % 2 === 0 ? 'even' : 'odd'}`}>{props.category}</h1>
-            <div className={`list-of-skills ${props.index % 2 === 0 ? 'even' : 'odd'}`}>
+            <h1 className="title-of-list-of-skills">{props.category}</h1>
+            <div className="list-of-skills">
                 {props.skills.map((skill, index) => (
                     <IndividualSkill key={index} index={index} skill={skill}/>
                 ))}

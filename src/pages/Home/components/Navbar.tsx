@@ -1,4 +1,5 @@
 import React, { FC, useEffect, useState, RefObject } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
 import '../../../styles/Home/componets/Navbar.css';
 
 interface NavbarProps {
@@ -69,6 +70,7 @@ const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef 
             <Leftside
                 introRef={introRef}
                 scrollToRef={scrollToRef}
+                activeSection={activeSection}
             />
             <Rightside
                 skillsRef={skillsRef}
@@ -84,17 +86,43 @@ const Navbar: FC<NavbarProps> = ({ introRef, skillsRef, projectsRef, contactRef 
 interface LeftsideProps {
     introRef: RefObject<HTMLDivElement>;
     scrollToRef: (ref: RefObject<HTMLDivElement>) => void;
+    activeSection: string | null;
 }
 
-const Leftside: FC<LeftsideProps> = ({ introRef, scrollToRef }) => {
+const Leftside: React.FC<LeftsideProps> = ({ introRef, scrollToRef, activeSection }) => {
+    
+    const [change, setChange] = useState<boolean>(false);
+    const [count, setCount] = useState<number>(0);
+
+    useEffect(() => {
+        setCount(count + 1);
+        if(count <= 2){
+            setChange(true);
+        }
+    }, [activeSection]);
+
+    const variants = {
+        visible: { opacity: 1 },
+        hidden: { opacity: 0 },
+    };
+
     return (
         <div className="navbar-left">
-            <button 
-                className="logo" 
-                onClick={() => scrollToRef(introRef)}
-            >
-                Alexander Martinez
-            </button>
+            <AnimatePresence>
+                {change && (
+                    <motion.button 
+                        className="logo"
+                        onClick={() => scrollToRef(introRef)}
+                        initial={activeSection === 'intro-section' ? 'visible' : 'hidden'}
+                        animate={activeSection === 'intro-section' ? 'hidden' : 'visible'}
+                        exit="hidden"
+                        variants={variants}
+                        transition={{ duration: 1 }}
+                    >
+                        Alexander Martinez
+                    </motion.button>
+                )}
+            </AnimatePresence>
         </div>
     );
 }
