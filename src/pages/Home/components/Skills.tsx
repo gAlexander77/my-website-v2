@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect, useRef, useState } from 'react';
 import skillsData from '../data/skills.json';
 import '../../../styles/Home/componets/Skills.css';
 import DecodeEffect from '../../../components/DecodeEffect';
@@ -7,10 +7,45 @@ const Skills: FC = () => {
     const data = skillsData;
     console.log(data);
 
+    const [inView, setInView] = useState(false);
+    const ref = useRef(null);
+
+    useEffect(() => {
+            const observer = new IntersectionObserver(
+                ([entry]) => {
+                    // Set inView to true when the element is in the viewport
+                    setInView(entry.isIntersecting);
+                },
+                {
+                    root: null, // Use the browser viewport
+                    threshold: 0.1, // Trigger when at least 10% of the element is in view
+                }
+            );
+
+            if (ref.current) {
+                observer.observe(ref.current);
+            }
+
+            return () => {
+                if (ref.current) {
+                    observer.unobserve(ref.current);
+                }
+            };
+    }, []);
+
+
     return(
         <>
-            <div className="skills-section-content">
-                <h1 className="skills-section-title">My Skills</h1>
+            <div ref={ref} className="skills-section-content">
+                <h1 className="skills-section-title">
+                    {inView && (
+                        <DecodeEffect
+                            text="My Skills"
+                            solveSpeed={1}
+                            randomSpeed={75}
+                        />
+                    )}
+                </h1>
                 <div className="skills-container">
                     {data.map((skills, index) => (
                         <SkillsCategory key={index} category={skills.category} skills={skills.skills} index={index}/>
