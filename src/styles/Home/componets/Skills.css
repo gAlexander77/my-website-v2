@@ -9,6 +9,7 @@
 
 .skills-section-title {
     font-family: 'Basement Grotesque', fallback, sans-serif;
+    text-transform: uppercase;
     align-self: center;
     font-size: 70px;
     font-weight: bold;
@@ -43,12 +44,12 @@
 
 .individual-skill {
     color: white;
-    padding: 5px 5px;
+    padding: 0px 0px;
     border-radius: 10px;
     flex-shrink: 0; /* Prevents the div from shrinking */
     flex-grow: 0; /* Prevents the div from growing */
     white-space: nowrap; 
-    cursor: pointer;
+    cursor: default;
 }
 
 .skills-container {
