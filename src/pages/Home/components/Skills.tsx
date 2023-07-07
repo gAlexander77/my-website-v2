@@ -1,13 +1,16 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
+import { motion } from 'framer-motion';
 import skillsData from '../data/skills.json';
 import '../../../styles/Home/componets/Skills.css';
 import DecodeEffect from '../../../components/DecodeEffect';
 
 const Skills: FC = () => {
+    
     const data = skillsData;
     console.log(data);
 
     const [inView, setInView] = useState(false);
+    const [hasBeenViewed, setHasBeenViewed] = useState<boolean>(false);
     const ref = useRef(null);
 
     useEffect(() => {
@@ -33,22 +36,33 @@ const Skills: FC = () => {
             };
     }, []);
 
+    useEffect(() => {
+        if(hasBeenViewed === false && inView === true) {
+            setHasBeenViewed(true);
+        }
+    },[inView]);
 
     return(
         <>
             <div ref={ref} className="skills-section-content">
                 <h1 className="skills-section-title">
-                    {inView && (
+                    {hasBeenViewed && (
                         <DecodeEffect
-                            text="My Skills"
+                            text="Skills"
                             solveSpeed={1}
-                            randomSpeed={75}
+                            randomSpeed={70}
                         />
                     )}
                 </h1>
                 <div className="skills-container">
                     {data.map((skills, index) => (
-                        <SkillsCategory key={index} category={skills.category} skills={skills.skills} index={index}/>
+                        <SkillsCategory 
+                            key={index} 
+                            category={skills.category}
+                            skills={skills.skills} 
+                            index={index}
+                            hasBeenViewed={hasBeenViewed}
+                        />
                     ))}                    
                 </div>
             </div>
@@ -60,22 +74,33 @@ interface SkillsCategoryProps {
     category: string;
     skills: string[];
     index: number;
+    hasBeenViewed: boolean;
 }
 
 const SkillsCategory: FC<SkillsCategoryProps> = (props) => {
     return (
-        <div className="skills-category-container">
+        <motion.div 
+            className="skills-category-container"
+            initial={{ opacity: 0 }}
+            animate={{ opacity: props.hasBeenViewed ? 1 : 0 }}
+            transition={{ delay: props.index * 0.5, duration: 0.5 }}
+        >
             <h1 className="title-of-list-of-skills">{props.category}</h1>
             <div className="list-of-skills">
                 {props.skills.map((skill, index) => (
                     <IndividualSkill key={index} index={index} skill={skill}/>
                 ))}
             </div>
-        </div>
+        </motion.div>
     );    
 }
 
-const IndividualSkill: FC<{skill: string, index: number}> = ({skill, index}) => {
+interface IndividualSkillProps {
+    skill: string; 
+    index: number;
+}
+
+const IndividualSkill: FC<IndividualSkillProps> = ({skill, index}) => {
     return (
         <div className="individual-skill">
             <p>{skill}</p>

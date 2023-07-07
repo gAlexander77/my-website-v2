@@ -34,11 +34,12 @@ const DecodeEffect: FC<DecodeProps> = ({text = '', randomSpeed = 20, solveSpeed 
                     setTick(tick + 1);
                 }                
             }
-            console.log(index);
-            console.log(tick);
-            console.log(currentText);
+            //console.log(index);
+            //console.log(tick);
+            //console.log(currentText);
             if (currentText === text) {
                 clearInterval(decodeEffect);
+                setCurrentText(getDecodedText(text, text.length));
             }
         }, randomSpeed);
         return () => {
